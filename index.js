@@ -18,14 +18,19 @@ const corsOptions = {
     optionSuccessStatus: 200
 }
 
-/*
-    Middleware
-*/
+/*MIDDLEWARE */
 app.use(logger("dev"));
-app.use(cors(corsOptions));
-// Read incoming requests property
+// This will read form data properly
 app.use(express.urlencoded({ extended: false }));
+// This will read JSON properly
 app.use(express.json());
+// This will allow us to test both servers locally
+app.use(cors(corsOptions));
+
+//Routes
+const ypRouter = require("./routes/ypRouter");
+// localhost:3001/api/.....
+app.use("/api", ypRouter);
 
 /*
     Server listening

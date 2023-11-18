@@ -20,7 +20,7 @@ const ypSchema = new mongoose.Schema(
         debutsanskrit_name: {
             type: String,
             unique: true,
-            required: true
+            required: false
         },
         translation_name: {
             type: String,
@@ -29,7 +29,7 @@ const ypSchema = new mongoose.Schema(
         },
         pose_description: {
             type: String,
-            unique: true,
+            unique: false,
             required: true
         },
         pose_benefits: {
@@ -38,19 +38,13 @@ const ypSchema = new mongoose.Schema(
             required: true
         },
         url_svg: {
-            type: String,
-            unique: true,
-            required: false
+            type: String
         },
         url_png: {
-            type: String,
-            unique: true,
-            required: false
+            type: String
         },
         url_svg_alt: {
-            type: String,
-            unique: true,
-            required: false
+            type: String
         }
 
     }
